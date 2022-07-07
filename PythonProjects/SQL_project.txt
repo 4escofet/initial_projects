@@ -1,0 +1,90 @@
+DROP DATABASE IF EXISTS Academias;
+DROP DATABASE IF EXISTS Alumnos;
+DROP DATABASE IF EXISTS Profesores;
+DROP DATABASE IF EXISTS Cursos;
+DROP DATABASE IF EXISTS Notas;
+DROP DATABASE IF EXISTS table_40;
+
+
+
+
+CREATE TABLE `Academias`
+(
+ `id`       integer NOT NULL AUTO_INCREMENT,
+ `nombre`   varchar(45) NOT NULL ,
+ `apellido` varchar(45) NOT NULL ,
+ `web`      varchar(45) NOT NULL ,
+
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Alumnos`
+(
+ `id`          integer NOT NULL AUTO_INCREMENT ,
+ `academia_id` integer NOT NULL ,
+ `nombre`      varchar(45) NOT NULL ,
+ `apellido`    varchar(45) NOT NULL ,
+ `email`       varchar(255) NOT NULL ,
+ `telefono`    varchar(45) NOT NULL ,
+
+PRIMARY KEY (`id`),
+KEY `FK_27` (`academia_id`),
+CONSTRAINT `FK_25` FOREIGN KEY `FK_27` (`academia_id`) REFERENCES `Academias` (`id`)
+);
+
+
+
+CREATE TABLE `Profesores`
+(
+ `id`          integer NOT NULL AUTO_INCREMENT,
+ `nombre`      varchar(45) NOT NULL ,
+ `academia_id` integer NOT NULL ,
+ `apellido`    varchar(45) NOT NULL ,
+ `email`       varchar(255) NOT NULL ,
+ `telefono`    varchar(45) NOT NULL ,
+
+PRIMARY KEY (`id`),
+KEY `FK_17` (`academia_id`),
+CONSTRAINT `FK_15` FOREIGN KEY `FK_17` (`academia_id`) REFERENCES `Academias` (`id`)
+);
+
+
+CREATE TABLE `Cursos`
+(
+ `id`          integer NOT NULL AUTO_INCREMENT,
+ `nombre`      varchar(45) NOT NULL ,
+ `profesor_id` integer NOT NULL ,
+ `description` text NOT NULL ,
+
+PRIMARY KEY (`id`),
+KEY `FK_39` (`profesor_id`),
+CONSTRAINT `FK_37` FOREIGN KEY `FK_39` (`profesor_id`) REFERENCES `Profesores` (`id`)
+);
+
+CREATE TABLE `Notas`
+(
+ `id`        integer NOT NULL AUTO_INCREMENT,
+ `nota`      float NOT NULL ,
+ `curso_id`  integer NOT NULL ,
+ `alumno_id` integer NOT NULL ,
+
+PRIMARY KEY (`id`),
+KEY `FK_58` (`alumno_id`),
+CONSTRAINT `FK_56` FOREIGN KEY `FK_58` (`alumno_id`) REFERENCES `Alumnos` (`id`),
+KEY `FK_61` (`curso_id`),
+CONSTRAINT `FK_59` FOREIGN KEY `FK_61` (`curso_id`) REFERENCES `Cursos` (`id`)
+);
+
+
+CREATE TABLE `table_40`
+(
+ `id`        integer NOT NULL AUTO_INCREMENT,
+ `alumno_id` integer NOT NULL ,
+ `curso_id`  integer NOT NULL ,
+
+PRIMARY KEY (`id`),
+KEY `FK_48` (`alumno_id`),
+CONSTRAINT `FK_46` FOREIGN KEY `FK_48` (`alumno_id`) REFERENCES `Alumnos` (`id`),
+KEY `FK_51` (`curso_id`),
+CONSTRAINT `FK_49` FOREIGN KEY `FK_51` (`curso_id`) REFERENCES `Cursos` (`id`)
+);
