@@ -88,3 +88,9 @@ CONSTRAINT `FK_46` FOREIGN KEY `FK_48` (`alumno_id`) REFERENCES `Alumnos` (`id`)
 KEY `FK_51` (`curso_id`),
 CONSTRAINT `FK_49` FOREIGN KEY `FK_51` (`curso_id`) REFERENCES `Cursos` (`id`)
 );
+
+
+
+INSERT INTO `academias` 
+(`id`, `firstname`, `lastname`, `email`, `phone`, `address`) 
+VALUES (NULL, 'Agustin', 'Escofet', 'dlkasdl@dot.com', '121239094', 'djafjasfd');

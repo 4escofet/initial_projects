@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set viewport with -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Set favicon and title-->    
+    <link rel="icon" type="image/x-icon" href="google.png">
+    <title>Guglear</title>
+    <!-- Set charset and dark mode :)-->  
+    <meta charset="UTF-8">
+    <meta content="dark" name="color-scheme">
+</head>
+<body>
+    <!-- BEGIN HEADER  -->
+    <div class="header">
+        <div class="header-links">
+            <a href="index.html">Google Search</a>
+            <a href="advanced.html">Google Advanced Search</a>
+        </div>
+    </div>
+    <!-- END HEADER  -->
+
+    <!-- START SEARCH -->
+    <div class="search-container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+        alt="Google logo" />
+        <form action="https://www.google.com/search" method="get">
+            <input class="search" type="text" name="q" placeholder="Buscar en Google...">
+            
+            <input type="submit" value="Google Search">
+            <input type="submit" name="btnI" value="I'm feeling lucky">
+            <input type="hidden" name="tbm" value="isch" />
+        </form>
+</body>
+</html>
