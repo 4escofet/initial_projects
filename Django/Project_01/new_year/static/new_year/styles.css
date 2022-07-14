@@ -1,0 +1,13 @@
+
+.Yes {
+    font-size: 90px;
+    color:rgb(36, 167, 10);
+    text-align: center;
+    
+}
+
+.No {
+    font-size: 90px;
+    color:rgb(214, 9, 9);
+    text-align: center;
+}
