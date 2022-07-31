@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Colors</title>
+     <script>
+        // Swap colors by buttons
+         document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('button').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector("#hello").style.color = button.dataset.color;
+                }
+            });
+         });
+
+         // Swap colors by selecting from display options 
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('select').onchange = function() {
+                document.querySelector('#hello2').style.color = this.value;
+            }
+        });
+     </script>
+</head>
+<body>
+    <h1 id="hello">Hello</h1>
+    <button data-color="red">Red</button>
+    <button data-color="blue">Blue</button>
+    <button data-color="green">Green</button>
+<br><br>
+
+    <h1 id="hello2">Hello 2 </h1>
+    <select>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+
+</body>
+</html>
