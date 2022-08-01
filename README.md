@@ -3,3 +3,4 @@
 - Python and SQL projects
 - Machine Learning projects
 - Django webapp
+- Svelte app
