@@ -1,21 +1,20 @@
  <!-- Lista de numeros-->
  <script>
- // Lista de cursos y números
 
-  let numeros = [ 1,5,4]
+ // number list
+
+  let numeros = [ 1,5,4] // inicial list
   const agregarNumero = () => {
     let num = Math.floor(Math.random()*(100 - 1)) + 1;
     console.log(num);
     numeros = [...numeros,num];
   };
-
  </script>
  
  <div>
-    
     <ul>
       {#each numeros as item}
-         <li>{item} </li>
+         <li> {item} </li>
       {/each}
     
       {#if numeros.length>5}

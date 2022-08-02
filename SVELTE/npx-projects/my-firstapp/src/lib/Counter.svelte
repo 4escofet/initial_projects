@@ -20,6 +20,7 @@
   $:message= count>5 ? 'Its greater than five' : 'its lower than five';
 </script>
 
+<h3> Numbers</h3>
 <h1 class={textcolor}> {count} </h1>
 <h2 class={textcolor}> {message} </h2> 
 
