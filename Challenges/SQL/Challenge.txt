@@ -1,0 +1,28 @@
+CREATE TABLE empleados
+    (id int, id_manager int, nombre nvarchar(30), nombre_manager nvarchar(30))
+;
+INSERT INTO empleados
+    (id , id_manager, nombre, nombre_manager)
+VALUES
+    (1, null, 'Fredi', null),
+    (2, 1, 'Mafi', 'Fredi'),
+    (3, 1, 'Diego', 'Fredi'),
+    (4, 2, 'Sofy', 'Mafi'),
+    (5, 4, 'Tomy', 'Sofy')
+
+With RECURSIVE cte (id, nombre, id_manager) 
+AS (
+  SELECT id, nombre, id_manager 
+  FROM empleados
+UNION ALL
+  SELECT c.id,e.nombre, e.id_manager 
+  FROM cte c join empleados e on (c.id_manager=e.id)
+  )
+SELECT id, nombre, COUNT(id)-1 AS REPORTES, id_manager
+FROM cte 
+GROUP BY nombre
+ORDER BY id ASC, id_manager DESC,REPORTES DESC
+
+-- part of solution: https://stackoverflow.com/questions/19690325/sql-query-to-get-recursive-count-of-employees-under-each-manager
+
+
