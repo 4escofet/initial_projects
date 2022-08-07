@@ -1,4 +1,4 @@
-# initial_projects
+# projects
  Initial projects on data science
 - Python and SQL projects
 - Machine Learning projects
