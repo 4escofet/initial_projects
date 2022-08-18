@@ -4,16 +4,16 @@ import { Toast } from "bootstrap";
 let toastEl;
 let opc = { text: "", color: "" };
 
-const mostrarMensaje = (text, color) => {
+function mostrarMensaje(text, color) {
   opc = {
     text: text,
     color: color,
   };
-  new Toast(toastEl).show();
-};
+  return new Toast(toastEl).show();
+}
 
 let todos = [];
-let todo = { id: "", texto: "", estado: false };
+let todo = { id: 0, texto: "", estado: false };
 
 if (localStorage.getItem("todos")) {
   todos = JSON.parse(localStorage.getItem("todos"));
@@ -29,7 +29,7 @@ $: localStorage.setItem("todos", JSON.stringify(todos));
     }
     todo.id = Date.now();
     todos = [...todos, todo];
-    todo = { id: "", texto: "", estado: false };
+    todo = { id: 0, texto: "", estado: false };
     console.log(todos);
   };
 
@@ -70,11 +70,11 @@ const updateTodos = (id) => {
 			{item.texto}
 		</p>
 		
-    <button class={classEstado(item.estado)} on:click={updateTodos(item.id)}>
+    <button class={classEstado(item.estado)} on:click={() => updateTodos(item.id)}>
 			<i class={classIcono(item.estado)} />
 		</button>
 		
-    <button class="btn btn-sm btn-danger" on:click={delTodos(item.id)}>
+    <button class="btn btn-sm btn-danger" on:click={() => delTodos(item.id)}>
 			<i class="bi bi-trash" />
 		</button>
 	</div>

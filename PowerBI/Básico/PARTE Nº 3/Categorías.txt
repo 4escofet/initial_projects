@@ -1,0 +1,9 @@
+IdCategoría;NombreCategoría;Imagen
+1;Bebidas;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/BEBIDAS.png
+2;Condimentos;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/CONDIMENTOS.png
+3;Repostería;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/REPOSTERIA.png
+4;Lácteos;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/LACTEOS.png
+5;Granos/Cereales;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/CEREALES.png
+6;Carnes;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/CARNES.png
+7;Frutas/Verduras;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/FRUTAS.png
+8;Pescado/Marisco;https://rawcdn.githack.com/lucianoeducacionit/audios/b020b63f53ad15528d153468818d7f4f8fdf284a/PESCADO.png

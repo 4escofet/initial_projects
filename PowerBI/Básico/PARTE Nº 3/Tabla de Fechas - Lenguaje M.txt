@@ -1,0 +1,20 @@
+let
+    // configurations start
+    Today=Date.From(DateTime.LocalNow()), // today's date
+    FromYear = 2009, // set the start year of the date dimension. dates start from 1st of January of this year
+    ToYear=2020, // set the end year of the date dimension. dates end at 31st of December of this year
+    StartofFiscalYear=7, // set the month number that is start of the financial year. example; if fiscal year start is July, value is 7
+    firstDayofWeek=Day.Monday, // set the week's start day, values: Day.Monday, Day, Sunday....
+    // configuration end
+    FromDate=#date(FromYear,1,1),
+    ToDate=#date(ToYear,12,31),
+    Source=List.Dates(
+        FromDate,
+        Duration.Days(ToDate-FromDate)+1,
+        #duration(1,0,0,0)
+    ),
+    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Fecha"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Fecha", type date}})
+in
+    #"Changed Type"
