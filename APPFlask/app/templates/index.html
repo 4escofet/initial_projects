@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <h1>Bienvenido a OWNIT chat-doc</h1>
+    {% if current_user.is_authenticated %}
+        <p>Hola, {{ current_user.username }}! Esta es una aplicación que le permitirá crear agentes que lo asistan con sus documentos.</p>
+    {% else %}
+        <p>Esta es una aplicación que le permitirá crear agentes que lo asistan con sus documentos. Por favor, <a href="{{ url_for('auth.login') }}">inicie sesión</a> o <a href="{{ url_for('auth.register') }}">registrese</a> para continuar.</p>
+    {% endif %}
+{% endblock %}

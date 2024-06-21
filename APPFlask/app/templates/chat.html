@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+    <h2>Chat</h2>
+    <form method="POST" action="{{ url_for('main.chat') }}">
+        <!-- Elimina cualquier referencia a form.hidden_tag() si no estás usando Flask-WTF -->
+        <div class="form-group">
+            <label for="question">Haz una pregunta, {{ current_user.username }}</label>
+            <textarea id="question" name="question" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    <hr>
+    <h3>Chat History</h3>
+    <ul class="list-group">
+        {% for chat in chats %}
+            <li class="list-group-item">
+                <strong>Question:</strong> {{ chat.question }}<br>
+                <strong>Answer:</strong> {{ chat.answer }}<br>
+                <small class="text-muted">{{ chat.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

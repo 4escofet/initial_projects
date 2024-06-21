@@ -1,0 +1,5 @@
+*.safetensors
+.env
+.venv
+env/
+venv/
